@@ -1,0 +1,15 @@
+body,html{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  overflow-x: hidden; 
+}
+*{
+  font-family: "Poppins", system-ui;
+  box-sizing: border-box;
+ 
+}
+#root{
+  box-sizing: border-box;
+}
