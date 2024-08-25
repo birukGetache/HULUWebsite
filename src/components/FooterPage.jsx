@@ -218,7 +218,7 @@ const FooterPage = () => {
 
   // Construct the URLs for email, phone, and Google Maps
   const emailUrl = 'mailto:marketing@emebet.net';
-  const phoneUrl = 'tel:+251978443971'; // Format the phone number as needed
+  const phoneUrl = 'tel:0978443971'; // Format the phone number as needed
   const mapUrl = `https://www.google.com/maps/@${latitude},${longitude},${zoomLevel}z`;
   return (
     <FooterContainer id='contact'>
@@ -267,7 +267,7 @@ const FooterPage = () => {
       <div style={{ marginBottom: '20px' }}>
         <a href={phoneUrl} style={{ textDecoration: 'none', color: 'inherit', display: 'flex', alignItems: 'center' }}>
           <FaPhone style={{ fontSize: '24px', color: '#555', marginRight: '8px' }} />
-          <span>2519-63-95-96-94</span>
+          <span>+2519-63-95-96-94</span>
         </a>
       </div>
       <div>
