@@ -218,7 +218,7 @@ const FooterPage = () => {
 
   // Construct the URLs for email, phone, and Google Maps
   const emailUrl = 'mailto:marketing@emebet.net';
-  const phoneUrl = 'tel:0978443971'; // Format the phone number as needed
+  const phoneUrl = 'tel:+251963959694';// Format the phone number as needed
   const mapUrl = `https://www.google.com/maps/@${latitude},${longitude},${zoomLevel}z`;
   return (
     <FooterContainer id='contact'>

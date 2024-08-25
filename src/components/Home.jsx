@@ -364,6 +364,22 @@ width:50vw;
         margin-top: 0;
       }
     }
+  @media (max-width: 530px) {
+  margin-top:10px;
+  height:fit-content;
+  width:100vw;
+    flex-direction: column;
+    padding-left: 20px;
+    
+    p {
+      font-size: 1,5rem;
+      margin-top: 60px;
+       max-width:90vw;
+      .highlight {
+        font-size: 24px;
+        margin-top: 0;
+      }
+    }
   }
 `;
 
@@ -418,19 +434,7 @@ const Titlet = styled.p`
 const CardContainer = styled.div`
  max-width:40vw;
   display: flex;
-  justify-content: space-around;
-  padding: 20px;
-  align-items:end;
-    @media (max-width: 930px) {
-    font-size: 0.8em;
-    max-width:90%;
-    width:90vw;
-  }
-    @media (max-width: 450px) {
-    font-size: 0.8em;
-    max-width:90%;
-    width:90vw;
-  }
+  justify-content:center;
 `;
 
 const Card = styled.div`
@@ -470,7 +474,6 @@ height:201px;
       width: 30vw;
   }
        @media (max-width: 450px) {
-       position:relative;
        height:100px;
        border:none;
        svg{
@@ -509,7 +512,7 @@ const HomePage = () => {
     <Card>
       <FaBolt color = "blue"/>
       <h3>Efficient</h3>
-      <p>Streamline your workflow with our tools.</p>
+      <p>We made it more efficient.</p>
     </Card>
     <Card>
       <FaShieldAlt color = "blue"/>
