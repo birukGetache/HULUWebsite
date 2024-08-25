@@ -261,7 +261,7 @@ const FooterPage = () => {
         </a>
       </div>
       <div style={{ marginBottom: '20px' }}>
-        <a href='tel:+251963959694' style={{ textDecoration: 'none', color: 'inherit', display: 'flex', alignItems: 'center' }}>
+        <a href="tel:+251916772303"style={{ textDecoration: 'none', color: 'inherit', display: 'flex', alignItems: 'center' }}>
           <FaPhone style={{ fontSize: '24px', color: '#555', marginRight: '8px' }} />
           <span>+2519-63-95-96-94</span>
         </a>
