@@ -101,7 +101,7 @@ const MobileNavList = styled.ul`
   position: absolute;
   top: 60px; 
   right: 0; 
-  background: lightblue;
+  background: blue;
   width: 100%;
   text-align: center;
   z-index: 1000;
