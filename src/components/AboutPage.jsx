@@ -1,4 +1,4 @@
-import React from 'react';
+import React ,{useState}from 'react';
 import styled from '@emotion/styled';
 import teamImage1 from '../assets/home.jpg'; // Update with actual paths to your images
 import teamImage2 from '../assets/home.jpg';
@@ -99,11 +99,34 @@ const TeamRole = styled.p`
 `;
 
 const AboutPage = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const handleToggle = () => {
+    setIsExpanded(!isExpanded);
+  };
+
+  const text = `At HULU GENERAL COMMISSION, we offer a comprehensive range of services tailored to meet your diverse needs. Whether you’re looking to buy or rent a car, we provide an extensive selection of vehicles to suit any preference and budget. Our expertise extends beyond automobiles; we also specialize in the sale and rental of land, ensuring you find the perfect property for your ventures. In addition to real estate and vehicle services, we are your go-to event organizers, dedicated to making your special occasions seamless and memorable. Moreover, we offer top-notch website design services to help you establish a compelling online presence, blending creativity with functionality. Trust us to deliver exceptional solutions across these varied domains, ensuring quality and satisfaction every step of the way.`;
+
+  // Adjust the length for the initial truncated text
+  const truncatedText = text.slice(0, 200) + '...';
   return (
     <AboutContainer  id='about'>
       <Title>About Us</Title>
 
       <SectionWrapper>
+        <Section>
+          <Paragraph>
+          {isExpanded ? text : truncatedText}    <button onClick={handleToggle} style={{border:"none" , backgroundColor:"transparent" , textDecoration:"underline" , color:"blue"} }>
+        {isExpanded ? 'See Less' : 'See More'}
+      </button>
+          </Paragraph>
+        </Section>
+        <Section>
+          <Paragraph>
+            <img src='/HULU.png'></img>
+          </Paragraph>
+      
+        </Section>
         <Section>
           <SubTitle>Our Mission</SubTitle>
           <Paragraph>
