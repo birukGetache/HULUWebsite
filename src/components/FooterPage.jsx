@@ -165,10 +165,6 @@ const NavList = styled.ul`
   margin: 0;
   padding: 0;
   align-items: center;
-
-  @media (max-width: 768px) {
-    display: none;
-  }
 `;
 
 const NavItem = styled.li`
