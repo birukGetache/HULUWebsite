@@ -36,8 +36,7 @@ const Nav = styled.nav`
   height: 60px;
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
-  background-color: blue;
-  color:white;
+  color:#117BF6;
   transition: top 0.3s ease-in-out;
    @media (max-width: 745px) {
      padding-right:10px;
@@ -71,7 +70,7 @@ const NavItem = styled.li`
 `;
 
 const NavLink = styled(Link)`
-  color: white;
+  color: #117BF6;
   text-decoration: none;
   padding: 10px 15px;
   font-size: 20px;
@@ -79,7 +78,6 @@ const NavLink = styled(Link)`
 
   &:hover {
     background: white;
-    color:blue;
   }
   font-family: "Poppins", system-ui;
 `;
@@ -102,7 +100,8 @@ const MobileNavList = styled.ul`
   position: absolute;
   top: 60px; 
   right: 0; 
-  background: blue;
+
+  
   width: 100%;
   text-align: center;
   z-index: 1000;
@@ -175,20 +174,20 @@ const Navbar = () => {
     <>
       <NavInfo ref={navInfoRef} style={{ transform: showNavInfo ? 'translateY(0)' : 'translateY(-100%)' }}>
         <div >
-          <FaPhone size={24}  color = "blue" style={{ transform: 'scaleX(-1)' }} />
+          <FaPhone size={24}  color = "#117BF6" style={{ transform: 'scaleX(-1)' }} />
           <span style={{paddingLeft:'10px'}}></span>
           0963959694
         </div>
         <div style={{display:"flex", alignItems:"center" ,gap:"40px"}}>
         <div style={{ display: "flex", justifyContent: "center" }}>
-      <FaGlobe size={24} color = "blue" />
+      <FaGlobe size={24} color = "#117BF6" />
       <span style={{ paddingLeft: '10px' }}></span>
       <a href={googleMapsURL} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
         <p style={{ padding: "0", margin: "0", display: "inline" }}>Leghar at Ahmara Bank Head office</p>
       </a>
     </div>
     <div style={{ display: "flex", justifyContent: "center" }}>
-      <FaEnvelope size={24} color = "blue" />
+      <FaEnvelope size={24} color = "#117BF6" />
       <span style={{ paddingLeft: '10px' }}></span>
       <a href={`mailto:${emailAddress}`} style={{ textDecoration: 'none', color: 'inherit' }}>
         <p style={{ padding: "0", margin: "0", display: "inline" }}>{emailAddress}</p>

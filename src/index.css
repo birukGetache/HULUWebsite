@@ -4,6 +4,7 @@ body,html{
   margin: 0;
   width: 100%;
   overflow-x: hidden; 
+
 }
 *{
   font-family: "Poppins", system-ui;
@@ -12,4 +13,5 @@ body,html{
 }
 #root{
   box-sizing: border-box;
+  background-color:  #d7d7d7;
 }

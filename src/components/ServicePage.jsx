@@ -22,7 +22,7 @@ const Container = styled.div`
 
 const Title = styled.h1`
   font-size: 2.5em;
-  color:blue;
+ color: #117BF6;
   margin-bottom: 20px;
   text-align: center;
 `;
@@ -44,7 +44,8 @@ const ServiceCard = styled.div`
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s;
-
+ background-color:white;
+  color: #117BF6;
   &:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
@@ -57,7 +58,7 @@ const ServiceCard = styled.div`
 
 const Icon = styled.div`
   font-size: 3em;
-  color: #007bff;
+  color: #117BF6;
   margin-bottom: 10px;
 `;
 
@@ -79,8 +80,8 @@ const ServicePage = () => {
       id: 1,
       icon: (
         <div>
-    <FontAwesomeIcon icon={faHome} title="Rent" color="blue" />
-    <FontAwesomeIcon icon={faMapSigns} title="Sale" color="blue"  />
+    <FontAwesomeIcon icon={faHome} title="Rent" color= "#117BF6" />
+    <FontAwesomeIcon icon={faMapSigns} title="Sale"  color= "#117BF6"  />
   </div>
       ),
       title: 'Land Sell and Rent',
@@ -89,10 +90,10 @@ const ServicePage = () => {
     {
       id: 2,
       icon:(    <div>
-    <FaTiktok color='blue'/>
-    <FaInstagram color='blue'/>
-    <FaFacebook color='blue'/>
-    <FaYoutube color='blue'/>
+    <FaTiktok  color= "#117BF6"/>
+    <FaInstagram color= "#117BF6"/>
+    <FaFacebook  color= "#117BF6"/>
+    <FaYoutube  color= "#117BF6"/>
       </div>),
       title: 'social Media marketing and event Organizer',
       description: 'Create user-friendly mobile applications for both iOS and Android.',
@@ -102,11 +103,11 @@ const ServicePage = () => {
       id: 3,
       icon: (
         <svg 
-        fill="blue" 
+        fill="#117BF6"
         viewBox="0 0 50 50" 
         xmlns="http://www.w3.org/2000/svg" 
         xmlns:xlink="http://www.w3.org/1999/xlink" 
-        stroke="blue"
+        stroke="#117BF6"
         height="110px" 
         width="110px"
     >
@@ -126,13 +127,13 @@ const ServicePage = () => {
       icon: (
         <IconWrapper>
         <div>
-          <FontAwesomeIcon icon={faUser} size="1x" color='blue' />
+          <FontAwesomeIcon icon={faUser} size="1x"  color= "#117BF6"/>
         </div>
         <div>
-          <FontAwesomeIcon icon={faUsers} size="1x" color='blue'/>
+          <FontAwesomeIcon icon={faUsers} size="1x"  color= "#117BF6"/>
         </div>
         <div>
-          <FontAwesomeIcon icon={faUserTie} size="1x" color='blue' />
+          <FontAwesomeIcon icon={faUserTie} size="1x"  color= "#117BF6" />
         </div>
       </IconWrapper>
     
@@ -143,23 +144,23 @@ const ServicePage = () => {
     {
       id:5,
       icon:(
-        <FontAwesomeIcon icon={faHome} size="2x" color='blue' />
+        <FontAwesomeIcon icon={faHome} size="2x"  color= "#117BF6" />
       ),
       title: 'Home Rental and Sell',
-      discription:"sdfsdf"
+      description:"sdfsdf"
       },
       {
         id:6,
         icon:(
           <svg
-          fill="#0000ff"
+          fill= "#117BF6"
           version="1.1"
           id="Layer_1"
           xmlns="http://www.w3.org/2000/svg"
           xmlnsXlink="http://www.w3.org/1999/xlink"
           viewBox="0 0 32 32"
           xmlSpace="preserve"
-          stroke="#0000ff"
+          stroke="#117BF6"
           width="116"
           height="116"
         >
@@ -180,7 +181,7 @@ const ServicePage = () => {
         </svg>
         ),
         title: 'Software Development and website Design',
-        discription:"sdfsdf"
+        description:"sdfsdf"
       }
   ];
 

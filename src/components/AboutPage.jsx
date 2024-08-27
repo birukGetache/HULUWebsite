@@ -15,7 +15,7 @@ const AboutContainer = styled.div`
 
 const Title = styled.h1`
   font-size: 2.5em;
-  color: blue;
+   color:#117BF6;
   margin-bottom: 20px;
   text-align: center;
 `;
@@ -45,7 +45,7 @@ const Section = styled.section`
 
 const SubTitle = styled.h2`
   font-size: 2em;
-  color: blue;
+  color:#117BF6;
   margin-bottom: 20px;
   text-align: center;
 `;

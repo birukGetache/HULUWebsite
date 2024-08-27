@@ -287,7 +287,7 @@ const Slider = styled.h2`
 `;
 const P = styled.p`
 height:30px;
-background-color:blue;
+background-color:#117BF6;
 color:white;
 margin:0;
 text-align:center;`
@@ -506,21 +506,21 @@ const HomePage = () => {
      <Class>
      <TextContainer>
       <T>
-      <p style={{fontWeight:"bold"}}>Commission-based roles teach you that success is not given; it's earned. The harder you work, <span className="highlight" style={{fontSize:"1.3em"}}>the greater the reward.</span></p>
+      <p style={{fontWeight:"bold"}}>Commission-based roles teach you that success is not given; it's earned. The harder you work, <span className="highlight" style={{fontSize:"1.3em" ,  color: "#117BF6"}}>the greater the reward.</span></p>
       </T>
       <CardContainer>
     <Card>
-      <FaBolt color = "blue"/>
+      <FaBolt  color= "#117BF6"/>
       <h3>Efficient</h3>
       <p>We made it more efficient.</p>
     </Card>
     <Card>
-      <FaShieldAlt color = "blue"/>
+      <FaShieldAlt  color= "#117BF6"/>
       <h3>Reliable</h3>
       <p>Dependable solutions you can trust.</p>
     </Card>
     <Card>
-      <FaCheckCircle color = "blue" />
+      <FaCheckCircle  color= "#117BF6" />
       <h3>Easy </h3>
       <p>Quick setup and integration.</p>
     </Card>

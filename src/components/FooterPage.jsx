@@ -148,7 +148,7 @@ display:flex;
 `
 const Text = styled.span`
 margin: 10px auto;
-color:blue;
+color:#117BF6;
 font-size:20px;
 padding:10px;
 `
@@ -172,14 +172,14 @@ const NavItem = styled.li`
 `;
 const P = styled.p`
 margin: 10px auto;
-color:blue;
+color:#117BF6;
 font-size:20px;
 padding:10px;
 `
 const App = styled.div`
 `
 const Button = styled.button`
-background-color:blue;
+background-color:#117BF6;
 color:white;
 border-radius:40px;
 border:none;
@@ -253,7 +253,7 @@ const FooterPage = () => {
           </NavList>
 </QuikLink>
         <SocialMedia>
-        <span style={{marginLeft:"auto" , marginRight:"auto" , color:"blue" ,marginTop:"19px" ,  fontSize:"20px"}}>Contact Us</span>
+        <span style={{marginLeft:"auto" , marginRight:"auto" , color:"#117BF6" ,marginTop:"19px" ,  fontSize:"20px"}}>Contact Us</span>
           <div>
              
           <div style={{ fontFamily: 'Arial, sans-serif', lineHeight: '1.6' }}>

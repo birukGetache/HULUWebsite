@@ -11,7 +11,7 @@ const Container = styled.div`
 
 const Title = styled.h1`
   font-size: 2.5em;
-  color: blue;
+  color: #117BF6;
   margin-bottom: 20px;
   text-align: center;
 `;
@@ -27,6 +27,7 @@ const TestimonialList = styled.div`
 
 const TestimonialCard = styled.div`
   border: 1px solid #ddd;
+  background-color:white;
   border-radius: 10px;
   padding: 20px;
   width: 300px;
