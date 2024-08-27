@@ -114,6 +114,12 @@ const AboutPage = () => {
       <Title>About Us</Title>
 
       <SectionWrapper>
+      <Section>
+          <Paragraph>
+            <img src='/HULU.png'></img>
+          </Paragraph>
+      
+        </Section>
         <Section>
           <Paragraph>
           {isExpanded ? text : truncatedText}    <button onClick={handleToggle} style={{border:"none" , backgroundColor:"transparent" , textDecoration:"underline" , color:"blue"} }>
@@ -121,12 +127,7 @@ const AboutPage = () => {
       </button>
           </Paragraph>
         </Section>
-        <Section>
-          <Paragraph>
-            <img src='/HULU.png'></img>
-          </Paragraph>
-      
-        </Section>
+
         <Section>
           <SubTitle>Our Mission</SubTitle>
           <Paragraph>

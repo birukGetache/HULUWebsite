@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faMapSigns } from '@fortawesome/free-solid-svg-icons';
-import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
+import { FaFacebook, FaTiktok, FaYoutube, FaInstagram } from 'react-icons/fa';
 import { faUser, faUsers, faUserTie } from '@fortawesome/free-solid-svg-icons';
 const IconWrapper = styled.div`
   display: flex;
@@ -89,10 +89,10 @@ const ServicePage = () => {
     {
       id: 2,
       icon:(    <div>
-    <FaFacebook color='blue'/>
-    <FaTwitter color='blue'/>
-    <FaLinkedin color='blue'/>
+    <FaTiktok color='blue'/>
     <FaInstagram color='blue'/>
+    <FaFacebook color='blue'/>
+    <FaYoutube color='blue'/>
       </div>),
       title: 'social Media marketing and event Organizer',
       description: 'Create user-friendly mobile applications for both iOS and Android.',

@@ -78,7 +78,8 @@ const NavLink = styled(Link)`
   border-radius: 5px;
 
   &:hover {
-    background: lightblue;
+    background: white;
+    color:blue;
   }
   font-family: "Poppins", system-ui;
 `;
@@ -174,7 +175,7 @@ const Navbar = () => {
     <>
       <NavInfo ref={navInfoRef} style={{ transform: showNavInfo ? 'translateY(0)' : 'translateY(-100%)' }}>
         <div >
-          <FaPhone size={24}  color = "blue"/>
+          <FaPhone size={24}  color = "blue" style={{ transform: 'scaleX(-1)' }} />
           <span style={{paddingLeft:'10px'}}></span>
           0963959694
         </div>

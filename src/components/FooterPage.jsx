@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
+import { FaTiktok, FaYoutube, FaLinkedin, FaInstagram, FaFacebook } from 'react-icons/fa';
 import logo from '../assets/HULU.png'; // Update with the path to your logo
 import ContactPage from './ContactPage';
 import { Link } from 'react-router-dom';
@@ -211,9 +211,12 @@ const FooterPage = () => {
   const latitude = 9.011704301013898;
   const longitude = 38.754134401379275;
   const zoomLevel = 15; // Adjust the zoom level if needed
-
+  const handleClick = () => {
+    // Open the Telegram bot in a new tab or window
+    window.open('https://t.me/HuluA_bot', '_blank');
+  };
   // Construct the URLs for email, phone, and Google Maps
-  const emailUrl = 'mailto:marketing@emebet.net';
+  const emailUrl = 'hulugeneralcommission@gmail.com';
   const phoneUrl = 'tel:+251963959694';// Format the phone number as needed
   const mapUrl = `https://www.google.com/maps/@${latitude},${longitude},${zoomLevel}z`;
   return (
@@ -255,14 +258,14 @@ const FooterPage = () => {
              
           <div style={{ fontFamily: 'Arial, sans-serif', lineHeight: '1.6' }}>
       <div style={{ marginBottom: '20px' }}>
-        <a href={emailUrl} style={{ textDecoration: 'none', color: 'inherit', display: 'flex', alignItems: 'center' }}>
+        <a href={`mailto:${emailUrl}`}  style={{ textDecoration: 'none', color: 'inherit', display: 'flex', alignItems: 'center' }}>
           <FaEnvelope style={{ fontSize: '24px', color: '#555', marginRight: '8px' }} />
-          <span>marketing@emebet.net</span>
+          <span>hulugeneralcommission@gmail.com</span>
         </a>
       </div>
       <div style={{ marginBottom: '20px' }}>
         <a href="tel:+251960380000"style={{ textDecoration: 'none', color: 'inherit', display: 'flex', alignItems: 'center' }}>
-          <FaPhone style={{ fontSize: '24px', color: '#555', marginRight: '8px' }} />
+          <FaPhone style={{ fontSize: '24px', color: '#555', marginRight: '8px' , transform: 'scaleX(-1)' }} />
           <span>+2519-63-95-96-94</span>
         </a>
       </div>
@@ -278,30 +281,30 @@ const FooterPage = () => {
          <Socials>
           <span>
           <SocialItem>
-            <SocialIcon href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-              <FaFacebook   color= '#555'/>
+            <SocialIcon href="https://tiktok.com/@hulugeneralcommission? t= 8 p3kz0clhsr" target="_blank" rel="noopener noreferrer">
+              <FaTiktok   color= '#555'/>
             </SocialIcon>
           </SocialItem>
           </span>
     <span>
           <SocialItem>
-            <SocialIcon href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-              <FaTwitter color= '#555' />
+          <SocialIcon href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+              <FaInstagram color= '#555'/>
             </SocialIcon>
           </SocialItem>
     </span>
     <span>
           <SocialItem>
-            <SocialIcon href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-              <FaLinkedin color= '#555' />
+            <SocialIcon href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+              <FaFacebook color= '#555' />
             </SocialIcon>
           </SocialItem>
           </span>
           <span>
           <SocialItem>
             
-            <SocialIcon href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-              <FaInstagram color= '#555'/>
+            <SocialIcon href="https://youtube.com" target="_blank" rel="noopener noreferrer">
+              <FaYoutube color= '#555'/>
             </SocialIcon>
           </SocialItem>
           </span>
@@ -311,6 +314,9 @@ const FooterPage = () => {
           <P>Download App</P>
           <H>our app used for register<br></br> and and see job accourding<br></br> to your preferences </H>
           <Button>HULU App</Button>
+          <P>Bot for Telegram</P>
+          <H style={{padding:"0"}}> Register on Bot</H>
+          <Button  onClick={handleClick}>Go to Telegram Bot</Button>
         </App>
       </FooterContent>
     </FooterContainer>
