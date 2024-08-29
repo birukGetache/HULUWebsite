@@ -1,7 +1,7 @@
 // src/slices/LanguageSlice.js
 import { createSlice } from '@reduxjs/toolkit';
 
-export const languageSlice = createSlice({
+export const LanguageSlice = createSlice({
   name: 'language',
   initialState: {
     value: 'English', // Default language
@@ -13,6 +13,6 @@ export const languageSlice = createSlice({
   },
 });
 
-export const { setLanguage } = languageSlice.actions;
+export const { setLanguage } = LanguageSlice.actions;
 
-export default languageSlice.reducer;
+export default LanguageSlice.reducer;
