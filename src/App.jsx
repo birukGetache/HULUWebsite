@@ -6,6 +6,9 @@ import AboutPage from './components/AboutPage'
 import ServicesPage from './components/ServicesPage';
 import ContactPage from './components/ContactPage';
 import { Helmet } from 'react-helmet';
+import { useSelector } from 'react-redux';
+import { I18nextProvider } from 'react-i18next';
+import i18n from './i18n';
 import Home from './components/Home'
 // Sample pages for routing
 // const Home = () => <h2>Home Page</h2>;
@@ -14,15 +17,16 @@ import Home from './components/Home'
 // const Contact = () => <h2>Contact Page</h2>;
 
 function App() {
+  
   return (
     <Router>
         <Helmet>
-        <title>My React App</title>
+        <title>HULU GENERAL COMMISSIONS</title>
         <meta name="description" content="A sample React application for general commission information and more." />
         <meta name="keywords" content="HULU, General Commission, Ethiopia, commission company, Hullu, soming else" />
         <meta name="author" content="Your Name" />
       </Helmet>
-      {/* <Navbar /> */}
+      {/* <Navbar /> */}a
       {/* <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/about" element={<AboutPage />} />

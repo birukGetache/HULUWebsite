@@ -2,7 +2,8 @@ import React ,{useState}from 'react';
 import styled from '@emotion/styled';
 import teamImage1 from '../assets/home.jpg'; // Update with actual paths to your images
 import teamImage2 from '../assets/home.jpg';
-
+import { translations } from './translations';
+import { useSelector } from 'react-redux';
 const AboutContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -11,6 +12,14 @@ const AboutContainer = styled.div`
   padding: 20px;
   padding-top:80px;
   background-color: transparent;
+  width:66%;
+  margin:auto;
+     @media (max-width: 1000px) {
+ font-size:1.2em;
+ padding-left:20px;
+  padding-right:20px;
+  }
+
 `;
 
 const Title = styled.h1`
@@ -18,23 +27,26 @@ const Title = styled.h1`
    color:#117BF6;
   margin-bottom: 20px;
   text-align: center;
+    @media (max-width: 560px) {
+ font-size:30px;
+  }
 `;
 
 const SectionWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  justify-content: center;
+  justify-content: space-between;
   width: 100%;
-  max-width: 1200px;
 `;
 
 const Section = styled.section`
   flex: 1 1 45%; /* Adjusts width based on available space */
-  min-width: 300px; /* Minimum width for smaller screens */
+  min-width: 30%; /* Minimum width for smaller screens */
   margin-bottom: 20px;
+   background-color: ${(props) => (props.theme === 'dark' ? '#ccd9ff' : 'white')};
+ color:${(props) => (props.theme === 'dark' ? '#000066' : '#ccc')};
   padding: 20px;
-  background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
@@ -55,6 +67,10 @@ const Paragraph = styled.p`
   color: #555;
   line-height: 1.6;
   text-align: center; /* Center align text for better readability */
+  img{
+  width:80%;
+  height:auto;
+  border-radius:10px;}
 `;
 
 const TeamSection = styled.div`
@@ -98,47 +114,54 @@ const TeamRole = styled.p`
   color: #555;
 `;
 
-const AboutPage = () => {
+const AboutPage = ({ theme }) => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const selectedLanguage = useSelector((state) => state.language.value); // Get language from Redux store
 
   const handleToggle = () => {
     setIsExpanded(!isExpanded);
   };
 
-  const text = `At HULU GENERAL COMMISSION, we offer a comprehensive range of services tailored to meet your diverse needs. Whether you’re looking to buy or rent a car, we provide an extensive selection of vehicles to suit any preference and budget. Our expertise extends beyond automobiles; we also specialize in the sale and rental of land, ensuring you find the perfect property for your ventures. In addition to real estate and vehicle services, we are your go-to event organizers, dedicated to making your special occasions seamless and memorable. Moreover, we offer top-notch website design services to help you establish a compelling online presence, blending creativity with functionality. Trust us to deliver exceptional solutions across these varied domains, ensuring quality and satisfaction every step of the way.`;
+  // Fetching translated texts
+  const t = translations[selectedLanguage] || translations['English']; // Fallback to English if language not found
 
-  // Adjust the length for the initial truncated text
-  const truncatedText = text.slice(0, 200) + '...';
+  // Text content
+  const textabout = t.textabout;
+  const truncatedText = textabout.slice(0, 200) + '...';
+
   return (
-    <AboutContainer  id='about'>
-      <Title>About Us</Title>
+    <AboutContainer theme={theme} id='about'>
+      <Title>{t.about}</Title>
 
-      <SectionWrapper>
-      <Section>
+      <SectionWrapper theme={theme}>
+        <Section theme={theme}>
           <Paragraph>
-            <img src='/HULU.png'></img>
-          </Paragraph>
-      
-        </Section>
-        <Section>
-          <Paragraph>
-          {isExpanded ? text : truncatedText}    <button onClick={handleToggle} style={{border:"none" , backgroundColor:"transparent" , textDecoration:"underline" , color:"blue"} }>
-        {isExpanded ? 'See Less' : 'See More'}
-      </button>
+            <img src='/HULU.avif' alt="HULU" style={{ width: '100%', height: 'auto' }} />
           </Paragraph>
         </Section>
-
-        <Section>
-          <SubTitle>Our Mission</SubTitle>
+        <Section theme={theme}>
           <Paragraph>
-            Our mission is to provide exceptional service and innovative solutions to meet our clients' needs. We are committed to excellence, integrity, and customer satisfaction. Our team of experts works tirelessly to deliver top-notch results and build lasting relationships.
+            {isExpanded ? textabout : truncatedText}
+            <button
+              onClick={handleToggle}
+              style={{ border: "none", backgroundColor: "transparent", textDecoration: "underline", color: "blue" }}
+            >
+              {isExpanded ? t.seeLess : t.seeMore}
+            </button>
           </Paragraph>
         </Section>
 
-        <Section>
-          <SubTitle>Our History</SubTitle>
+        <Section theme={theme}>
+          <SubTitle>{t.missionTitle}</SubTitle>
           <Paragraph>
-            Founded in 2010, we have grown from a small startup to a leading company in our industry. Over the years, we have expanded our services, embraced new technologies, and built a team of skilled professionals dedicated to achieving our goals.
+            {t.missionText}
+          </Paragraph>
+        </Section>
+
+        <Section theme={theme}>
+          <SubTitle>{t.historyTitle}</SubTitle>
+          <Paragraph>
+            {t.historyText}
           </Paragraph>
         </Section>
       </SectionWrapper>

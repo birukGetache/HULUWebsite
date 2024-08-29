@@ -27,7 +27,7 @@ const TestimonialList = styled.div`
 
 const TestimonialCard = styled.div`
   border: 1px solid #ddd;
-  background-color:white;
+ background-color: ${(props) => (props.theme === 'dark' ? '#ccd9ff' : 'white')};
   border-radius: 10px;
   padding: 20px;
   width: 300px;
@@ -41,7 +41,7 @@ const TestimonialCard = styled.div`
 
 const Name = styled.h2`
   font-size: 1.5em;
-  color: #333;
+ color:${(props) => (props.theme === 'dark' ? '#000066' : '#333')};
   margin-bottom: 10px;
 `;
 
@@ -62,21 +62,53 @@ const Star = styled.span`
   margin-right: 5px;
 `;
 
-const TestimonialPage = () => {
+const TestimonialPage = ({ theme, language }) => {
+  // Testimonials array with both English and Amharic feedback
   const testimonials = [
-    { name: 'Gemechu Feyisa', feedback: 'Great service and fantastic results. Highly recommended!', rating: 5 },
-    { name: 'Nahom Ayele', feedback: 'Good experience but there is room for improvement. and nice motivation', rating: 4 },
-    { name: 'Natinael Seifu', feedback: 'Average service, expected more based on the reviews.', rating: 3 },
+    {
+      name: {
+        English: 'Gemechu Feyisa',
+        Amharic: 'ግምቹ ፍይሳ'
+      },
+      feedback: {
+        English: 'Great service and fantastic results. Highly recommended!',
+        Amharic: 'በጣም ጥሩ አገልግሎት እና በጣም ጥሩ ውጤቶች። በጣም እቅድ እንደ ታመን በማስታወቂያ እባኮት።'
+      },
+      rating: 5
+    },
+    {
+      name: {
+        English: 'Nahom Ayele',
+        Amharic: 'ናሆም አየሌ'
+      },
+      feedback: {
+        English: 'Good experience but there is room for improvement. and nice motivation',
+        Amharic: 'ጥሩ ልምድ ነበር ነገር ግን ማሻሻል አለ። እና እንደገና መንገድ ላይ ማስታወቅ ይጠበቃል።'
+      },
+      rating: 4
+    },
+    {
+      name: {
+        English: 'Natinael Seifu',
+        Amharic: 'ናቲናኤል ሴይፉ'
+      },
+      feedback: {
+        English: 'Average service, expected more based on the reviews.',
+        Amharic: 'መነሻ አገልግሎት፣ በእውነተኛ ግን እንደ ምስል ያስተዋል በተመለከተው።'
+      },
+      rating: 3
+    }
   ];
+  
 
   return (
     <Container>
-      <Title>What Our Clients Say</Title>
+      <Title>{language === "English" ? "What Our Clients Say" : "እንዴት ተነሣችን እና ተነሣችን እና ተንሳሾች የምንታወቅና ትክክል አግሎት"}</Title>
       <TestimonialList>
         {testimonials.map((testimonial, index) => (
-          <TestimonialCard key={index}>
-            <Name>{testimonial.name}</Name>
-            <Feedback>{testimonial.feedback}</Feedback>
+          <TestimonialCard key={index} theme={theme}>
+            <Name theme={theme}>{testimonial.name[language]}</Name>
+            <Feedback>{testimonial.feedback[language]}</Feedback>
             <Rating>
               {[...Array(5)].map((_, i) => (
                 <Star key={i} filled={i < testimonial.rating}>★</Star>

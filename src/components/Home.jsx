@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from '@emotion/styled';
 import imageHome from '../assets/home.webp';
-import car from '../assets/car.webp'; 
-import track from '../assets/track.avif'; 
+import { useSelector } from 'react-redux';
+import Typewriter from './Typewriter';
 import images from '../assets/images.jpg'
 import TestimonialPage from './TestimonialPage';
 import ServicePage from './ServicePage';
@@ -10,11 +10,12 @@ import FooterPage from './FooterPage';
 import { FaBolt, FaShieldAlt, FaCheckCircle } from 'react-icons/fa';
 import AboutPage from './AboutPage';
 import Navbar from './Navbar';
+import { translations } from './translations'; 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   font-family: 'Arial', sans-serif;
-
+  margin-top:140px;
   @media (max-width: 768px) {
     /* Styles for tablets and mobile devices */
   }
@@ -29,7 +30,7 @@ const Header = styled.div`
   justify-content: center; /* Center content horizontally */
   align-items: center;
   margin: 0 auto; /* Center the header */
-  
+  height:fit-content;
   @media (max-width: 768px) {
     flex-direction: column;
   }
@@ -205,10 +206,9 @@ const Class = styled.div`
   grid-template-columns:1fr 1fr;
   width: 100vw;
   justify-content: space-between;
-  padding: auto 60px auto 0;
 height:fit-content;
   // Media query for mobile devices
-  @media (max-width: 930px) { // Adjust the max-width value to target different screen sizes
+  @media (max-width: 830px) { // Adjust the max-width value to target different screen sizes
    display:grid;
    grid-template-columns:1fr; // Stack items vertically
     align-items: center;    // Center items horizontally
@@ -290,6 +290,7 @@ height:30px;
 background-color:#117BF6;
 color:white;
 margin:0;
+margin-bottom:0;
 text-align:center;`
 
 const Tbnail = styled.div`
@@ -325,98 +326,83 @@ const TextContainer = styled.div`
 box-sizing:border-box;
 margin-bottom:150px;
 width:50vw;
-  height: 100%;
-  display: grid;
-  grid-template-columns:1fr;
-  justify-content: center;
-  align-items: center;
-  place-items:center;
-  padding-left: 60px;
-  padding-right:60px;
-
+  diplay:flex;
+  justify-content:center;
+  align-items:start;
+  padding-left: 200px;
+  color: ${(props) => (props.theme === 'dark' ? '	 #e6f2ff' : 'black')};
   p {
  max-width:40vw;
- margin-left:10px;
     font-size: 2.5vw;
-    margin-top: 100px;
-    
     .highlight {
-     font-size:1em;
-      display: inline;
-      margin-top: -10px;
-      color: blue;
+    
     }
   }
 
-  @media (max-width: 930px) {
-  margin-top:100px;
-  height:fit-content;
-  width:100vw;
-    flex-direction: column;
-    padding-left: 20px;
-    
+  @media (max-width: 900px) {
+
+  margin-bottom:0px;
     p {
       font-size: 1,5rem;
       margin-top: 10px;
        max-width:90vw;
+       
       .highlight {
         font-size: 24px;
         margin-top: 0;
       }
     }
-  @media (max-width: 530px) {
-  margin-top:10px;
-  height:fit-content;
-  width:100vw;
-    flex-direction: column;
-    padding-left: 20px;
-    
-    p {
-      font-size: 1,5rem;
-      margin-top: 60px;
-       max-width:90vw;
-      .highlight {
-        font-size: 24px;
-        margin-top: 0;
-      }
-    }
+  @media (max-width: 820px) {
+  margin:0 auto;
+  display:flex;
+  width:80vw;
+  justify-content:center;
+  padding:0;
+  height: fit-content;
+  p{
+   font-size:20px;
+  }
+ 
   }
 `;
 
 // Styled container for the image
 const ImageContainer = styled.div`
-  height: 100vh;
-  margin-top: 90px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: start;
   padding-right: 60px;
+  margin-bottom:150px;
 width:50vw;
   img {
     height: auto;
-    width: 70vw;
+    width: 30vw;
+      margin-right:140px;
+    border-radius:20px;
   }
 
   @media (max-width: 930px) {
   margin-top:0;
   display:flex;
-  width:100vw;
   justify-content:center;
     padding-right: 20px;
   height: fit-content;
     img {
-      height: 40vh;
+      height: 20vh;
+    
     }
-  @media (max-width: 450px) {
+  @media (max-width: 820px) {
   margin-top:0;
   display:flex;
-  width:100vw;
+  width:80vw;
+  margin:auto;
   justify-content:center;
-    padding-right: 20px;
+  padding:0;
   height: fit-content;
     img {
-      width: 90vw;
+      width: 90%;
       height:auto;
+      margin:0;
     }
   }
 `;
@@ -432,21 +418,24 @@ const Titlet = styled.p`
 
 // Styled component for icon cards
 const CardContainer = styled.div`
- max-width:40vw;
+ width:80vw;
+ margin:auto;
   display: flex;
-  justify-content:center;
+  justify-content:space-between;
 `;
 
 const Card = styled.div`
 height:201px;
-  background: #fff;
   border: 1px solid #ddd;
   border-radius: 8px;
+ background-color: ${(props) => (props.theme === 'dark' ? '#ccd9ff' : 'white')};
+ color:${(props) => (props.theme === 'dark' ? '#000066' : '#ccc')};
   padding: 20px;
-  width: 12vw;
+  font-size:20px;
+  width: 20vw;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin: 10px 10px -150px 10px;
+  margin: 10px 10px 10px 10px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   &:hover {
     transform: translateY(-10px);
@@ -455,7 +444,7 @@ height:201px;
 
   h3 {
     margin: 10px 0;
-    font-size: 10px;
+    font-size: 1em;
   }
 
   p {
@@ -471,7 +460,7 @@ height:201px;
       @media (max-width: 930px) {
     font-size: 0.8em;
     max-width:90%;
-      width: 30vw;
+      width: 30%;
   }
        @media (max-width: 450px) {
        height:100px;
@@ -486,56 +475,76 @@ height:201px;
 const T = styled.div`
 height:100%;
 display:flex;
-align-items:end;`
-
+align-items:start;
+`
 const HomePage = () => {
-  const [selectedImage, setSelectedImage] = useState(imageHome); // Set default image to "Home"
+  const theme = useSelector((state) => state.theme.value);
+  const language = useSelector((state) => state.language.value); // Assume you have a language state
+  const [selectedImage, setSelectedImage] = useState(null); // Default selected image to null
 
   const handleThumbnailClick = (image) => {
     setSelectedImage(image);
   };
 
+  useEffect(()=>{
+    console.log(language);
+  },[language])
   const handleCloseFullScreen = () => {
     setSelectedImage(null);
   };
 
+  const text = translations[language].text;
+  const cardTexts = {
+    efficient: translations[language].efficient,
+    efficientDesc: translations[language].efficientDesc,
+    reliable: translations[language].reliable,
+    reliableDesc: translations[language].reliableDesc,
+    easy: translations[language].easy,
+    easyDesc: translations[language].easyDesc
+  };
+
   return (
-    <Container>
-      <Navbar></Navbar>
+    <Container theme={theme}>
+      <Navbar />
       <Header id='home'>
-     <Class>
-     <TextContainer>
-      <T>
-      <p style={{fontWeight:"bold"}}>Commission-based roles teach you that success is not given; it's earned. The harder you work, <span className="highlight" style={{fontSize:"1.3em" ,  color: "#117BF6"}}>the greater the reward.</span></p>
-      </T>
-      <CardContainer>
-    <Card>
-      <FaBolt  color= "#117BF6"/>
-      <h3>Efficient</h3>
-      <p>We made it more efficient.</p>
-    </Card>
-    <Card>
-      <FaShieldAlt  color= "#117BF6"/>
-      <h3>Reliable</h3>
-      <p>Dependable solutions you can trust.</p>
-    </Card>
-    <Card>
-      <FaCheckCircle  color= "#117BF6" />
-      <h3>Easy </h3>
-      <p>Quick setup and integration.</p>
-    </Card>
-  </CardContainer>
-    </TextContainer>
-    <ImageContainer>
-      <img src={images} alt="Commission-Based Work" />
-    </ImageContainer>
-     </Class>
+        <Class>
+          <TextContainer theme={theme}>
+            <T>
+              <Typewriter
+                text={text}
+                speed={30}
+                className="highlight"
+                style={{ fontWeight: "bold" }}
+              />
+            </T>
+          </TextContainer>
+          <ImageContainer>
+            <img src="/HULUABOUT.jpg" alt="Commission-Based Work" />
+          </ImageContainer>
+        </Class>
       </Header>
-      <AboutPage></AboutPage>
-      <ServicePage ></ServicePage>
-<TestimonialPage></TestimonialPage>
-     <FooterPage ></FooterPage>
-     <P>&copy; Designed By HULU GENERAL COMMISSION </P>
+      <CardContainer>
+        <Card theme={theme}>
+          <FaBolt color="#117BF6" />
+          <h3>{cardTexts.efficient}</h3>
+          <p>{cardTexts.efficientDesc}</p>
+        </Card>
+        <Card theme={theme}>
+          <FaShieldAlt color="#117BF6" />
+          <h3>{cardTexts.reliable}</h3>
+          <p>{cardTexts.reliableDesc}</p>
+        </Card>
+        <Card theme={theme}>
+          <FaCheckCircle color="#117BF6" />
+          <h3>{cardTexts.easy}</h3>
+          <p>{cardTexts.easyDesc}</p>
+        </Card>
+      </CardContainer>
+      <AboutPage theme={theme}/>
+      <ServicePage theme={theme}  language = {language}  />
+      <TestimonialPage theme={theme} language = {language} />
+      <FooterPage theme={theme} language = {language} />
+      <P>&copy; {translations[language].footer}</P>
     </Container>
   );
 };
