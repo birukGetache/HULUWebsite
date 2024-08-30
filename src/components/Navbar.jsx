@@ -265,9 +265,7 @@ const Navbar = () => {
             <Logo src='/HULU (3).png' alt="HULU Logo" />
             <Logo src='/HULU (4).png' alt="HULU Logo" />
           </div>
-          <Hamburger onClick={toggleMenu}>
-            {isOpen ? <FaTimes /> : <FaBars />}
-          </Hamburger>
+          
           <NavList>
             <NavItem onClick={() => scrollToSection('home')}>
               <NavLink to="#" theme={theme}>{translations[selectedLanguage].home}</NavLink>
@@ -308,6 +306,9 @@ const Navbar = () => {
               controlClassName="my-dropdown-control"
             />
           </div>
+          <Hamburger onClick={toggleMenu}>
+            {isOpen ? <FaTimes /> : <FaBars />}
+          </Hamburger>
         </Nav>
       </div>
     </>
