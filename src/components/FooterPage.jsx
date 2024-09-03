@@ -264,7 +264,7 @@ const FooterPage = ({ theme, language }) => {
         contact: 'Contact'
       },
       Amharic: {
-        home: 'መነሣት',
+        home: 'መነሻ',
         about: 'ስለ እኛ',
         services: 'አገልግሎቶች',
         contact: 'እንዴት ትገናኝ'
@@ -283,7 +283,7 @@ const FooterPage = ({ theme, language }) => {
         contactUs: 'እንዴት ትገናኝ',
         email: 'hulugeneralcommission@gmail.com',
         phone: '+2519-63-95-96-94',
-        address: 'ሌግሃር፣ አምራ ባንክ።',
+        address: 'ለገሃር፣ አምራ ባንክ።',
         botText: 'ወደ ቴሌግራም ቦት ይሂዱ',
         botDesc: 'በቴሌግራም ቦት ይመዝገቡ'
       }

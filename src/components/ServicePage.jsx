@@ -90,8 +90,8 @@ const ServicePage = ({ theme, language }) => {
         Amharic: 'መሬት ሽያጭ እና ኪራይ'
       },
       description: {
-        English: 'We build high-quality, responsive websites tailored to your needs.',
-        Amharic: 'እኛ ለእርስዎ የተሻለ የሚሆን እና የሚስተካከል ድህረገፅ እንገንባለን።'
+        English: 'We provide expert assistance with buying, selling, and renting land, ensuring smooth transactions through personalized support and market analysis.',
+        Amharic: 'የግል ድጋፍ እና የገበያ ትንተና በማድረግ ገንዝብ ልውውጦችን ለማረጋገጥ መሬት በመግዛት, በመሸጥ እና በመከራየት ረገድ ባለሙያ እገዛ እናደርጋለን ።'
       },
     },
     {
@@ -107,11 +107,11 @@ const ServicePage = ({ theme, language }) => {
       ),
       title: {
         English: 'Social Media Marketing and Event Organizer',
-        Amharic: 'ማህበረሰብ የሚያስተዳድር እና ክትባት አዘጋጅ'
+        Amharic: 'ሶሻል ሚዲያ ማርኬቲንግ እና ኢቨንት ኦርጋናይዚንግ'
       },
       description: {
-        English: 'Create user-friendly mobile applications for both iOS and Android.',
-        Amharic: 'ለiOS እና Android የሚሰራ ተጠቃሚ መሆን የሚችል የእግር ተቀባይ አፕሊኬሽን እንፈጥራለን።'
+        English: 'Create a positive and proactive relationship with your social media followers, develop situations that align with your strategy, and organize various events.',
+        Amharic: ' ከማህበራዊ ሚዲያ ተከታዮቻችሁ ጋር ጥሩና ቀጣይነት ያለው ግንኙነት በመፍጠር ከእቅዳችሁ ጋር የሚስማሙ ሁኔታዎችን መፍጠር፤የተለያዩ ኢቨንቶችን ማዘጋጀት፡፡'
       },
     },
     {
@@ -133,8 +133,8 @@ const ServicePage = ({ theme, language }) => {
         Amharic: 'መኪና ኪራይ እና ሽያጭ'
       },
       description: {
-        English: 'Efficient and secure database management solutions for your business.',
-        Amharic: 'በጥራት እና ደህንነት ምርቶችን ለንግድዎ ማቅረብ።'
+        English: 'Connecting with customers who are interested in buying and servicing cars.',
+        Amharic: ' መኪና መሸጥና ማከራየት የሚፈልጉ ደንበኞችን መግዛትና መከራየት ከሚፈልጉ ደንበኞች ጋር ማገናኘት፡:'
       },
     },
     {
@@ -154,11 +154,11 @@ const ServicePage = ({ theme, language }) => {
       ),
       title: {
         English: 'Human Resource',
-        Amharic: 'ሰብስ ሃብት'
+        Amharic: 'የሰው ሀብት'
       },
       description: {
-        English: 'Create and maintain scalable web applications with modern frameworks.',
-        Amharic: 'በዘመናዊ እና ዝርዝር የድህረገፅ መዋቅር እንፈጥራለን እና እንቀጣጠራለን።'
+        English: 'We provide complete HR services, including recruitment, employee management, and organizational development, ensuring effective practices and tailored solutions to enhance workforce efficiency.',
+        Amharic: 'የምልመላ፣ የሰራተኛ አስተዳደርእና ድርጅታዊ ልማትን ጨምሮ የተሟላ የHR አገልግሎት እንሰጣለን። ውጤታማ ተግባራትን እና የሰራተኞችን ውጤታማነት ለማሻሻል የተጣጣሙ መፍትሄዎችን እናቀርባለን።'
       },
     }
   ];

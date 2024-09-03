@@ -72,7 +72,7 @@ const TestimonialPage = ({ theme, language }) => {
       },
       feedback: {
         English: 'Great service and fantastic results. Highly recommended!',
-        Amharic: 'በጣም ጥሩ አገልግሎት እና በጣም ጥሩ ውጤቶች። በጣም እቅድ እንደ ታመን በማስታወቂያ እባኮት።'
+        Amharic: 'ታላቅ አገልግሎት እና አስደናቂ ውጤቶች. በጣም የሚመከር ሥራ!።'
       },
       rating: 5
     },
@@ -83,7 +83,7 @@ const TestimonialPage = ({ theme, language }) => {
       },
       feedback: {
         English: 'Good experience but there is room for improvement. and nice motivation',
-        Amharic: 'ጥሩ ልምድ ነበር ነገር ግን ማሻሻል አለ። እና እንደገና መንገድ ላይ ማስታወቅ ይጠበቃል።'
+        Amharic: 'ጥሩ ተሞክሮ ቢኖረንም ማሻሻያ ማድረግ ያስፈልጋል ። እና ጥሩ ውስጣዊ ግፊት::'
       },
       rating: 4
     },
@@ -94,7 +94,7 @@ const TestimonialPage = ({ theme, language }) => {
       },
       feedback: {
         English: 'Average service, expected more based on the reviews.',
-        Amharic: 'መነሻ አገልግሎት፣ በእውነተኛ ግን እንደ ምስል ያስተዋል በተመለከተው።'
+        Amharic: 'አማካይ አገልግሎት, በክለሳዎቹ ላይ ተመስርቶ የበለጠ ይጠበቃል።'
       },
       rating: 3
     }
@@ -103,7 +103,7 @@ const TestimonialPage = ({ theme, language }) => {
 
   return (
     <Container>
-      <Title>{language === "English" ? "What Our Clients Say" : "እንዴት ተነሣችን እና ተነሣችን እና ተንሳሾች የምንታወቅና ትክክል አግሎት"}</Title>
+      <Title>{language === "English" ? "What Our Clients Say" : "ደንበኞቻችን ምን ይላሉ?"}</Title>
       <TestimonialList>
         {testimonials.map((testimonial, index) => (
           <TestimonialCard key={index} theme={theme}>
