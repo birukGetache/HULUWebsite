@@ -5,20 +5,8 @@ import teamImage2 from '../assets/home.jpg';
 import { translations } from './translations';
 import { useSelector } from 'react-redux';
 const AboutContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-family: 'Arial', sans-serif;
-  padding: 20px;
-  padding-top:80px;
-  background-color: transparent;
-  width:66%;
-  margin:auto;
-     @media (max-width: 1000px) {
- font-size:1.2em;
- padding-left:20px;
-  padding-right:20px;
-  }
+ width:75%;
+ margin:auto;
 
 `;
 

@@ -399,12 +399,10 @@ const FooterPage = ({ theme, language }) => {
             {language === 'English' ? 'Our app used for register and see job according to your preferences' : 'መተግበሪያችን ለመዝግብ እና በተመረጡ እንደ ምርጫ ስራዎች ማየት ይጠቀሙበታል'}
           </H>
           <Button>  {language === 'English' ? "HULU App" : "መተግበሪያ አውርድ"}</Button>
-          <P>
+          <P theme={theme}>
             {language === 'English' ? texts.contact.English.botDesc : texts.contact.Amharic.botDesc}
           </P>
-          <H style={{ padding: "0" }}>
-            {language === 'English' ? texts.contact.English.botDesc : texts.contact.Amharic.botDesc}
-          </H>
+       
           <Button onClick={handleClick}>
             {language === 'English' ? texts.contact.English.botText : texts.contact.Amharic.botText}
           </Button>

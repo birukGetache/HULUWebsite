@@ -21,10 +21,11 @@ function App() {
   return (
     <Router>
         <Helmet>
-        <title>HULU GENERAL COMMISSIONS</title>
-        <meta name="description" content="A sample React application for general commission information and more." />
-        <meta name="keywords" content="HULU, General Commission, Ethiopia, commission company, Hullu, soming else" />
-        <meta name="author" content="Your Name" />
+        <title> HULU GENERAL COMMISSIONS</title>
+        <meta name="description" content="Learn more about HULU General Commissions." />
+        <meta name="keywords" content="about, Hulu, general commissions" />
+        <meta property="og:title" content="HULU GENERAL COMMISSIONS" />
+        <meta property="og:description" content="Learn more about HULU General Commissions." />
       </Helmet>
       {/* <Navbar /> */}a
       {/* <Routes>

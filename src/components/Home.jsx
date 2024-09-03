@@ -429,7 +429,7 @@ height:201px;
   border: 1px solid #ddd;
   border-radius: 8px;
  background-color: ${(props) => (props.theme === 'dark' ? '#ccd9ff' : 'white')};
- color:${(props) => (props.theme === 'dark' ? '#000066' : '#ccc')};
+ color:${(props) => (props.theme === 'dark' ? '#000066' : '#000066')};
   padding: 20px;
   font-size:20px;
   width: 20vw;
